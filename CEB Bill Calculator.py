@@ -1,9 +1,10 @@
 import tkinter as tk
 
-
+# Function to calculate the electricity bill
 def calculate_bill():
     units = int(entry_units.get())
 
+ # Define electricity rates and fixed charges for different unit ranges
     if 0 <= units <= 30:
         unit_price = 12
         fixed_price = 180
@@ -34,23 +35,23 @@ def calculate_bill():
     result_label.config(text=f"Total Cost: {total_cost} LKR")
 
 
-
+# Create the main window
 window = tk.Tk()
 window.title("Electricity Bill Calculator")
 
-
+# Label and Entry for user to input the number of units
 label_units = tk.Label(window, text="Enter the number of units:")
 label_units.pack()
 entry_units = tk.Entry(window)
 entry_units.pack()
 
-
+# Button to trigger the bill calculation
 calculate_button = tk.Button(window, text="Calculate", command=calculate_bill)
 calculate_button.pack()
 
-
+# Label to display the calculated total cost
 result_label = tk.Label(window, text="")
 result_label.pack()
 
-
+# Start the GUI event loop
 window.mainloop()
